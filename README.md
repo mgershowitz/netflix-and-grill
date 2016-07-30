@@ -25,14 +25,10 @@ This will be an API where the user can save their shows and BBQ recipes
 
 ## User story
 
-- As a user I want to be able to answer a set of questions and be suggested a random drink based on those answers
-- As a user I want to be able to select a completely random drink
-- As a user I want to be able to pick my base alcohol
-- As a user I want to be able to save my favorite drinks and make comments about them
-- As a user I want to be able to ban drinks from my profile
-- As a user I want to  be able to accept or deny my drink 
+- As a user I want to be able to search television shows by title
+- As a user I want to be able to be given suggestions of shows based on genre
+- As a user I want to be able to be able to save y favorite shows
+- As a user I want to be able to make comments about my favorite shows
+- As a user I want to be able to be able to search grilling recipes based on main ingredient
 
 ## Citation
-- How to end a string at a certain character http://stackoverflow.com/questions/9133102/how-to-grab-substring-before-a-specified-character-jquery-or-javascript
-- Data scraper with cheerio
-- connecting to mongo host http://expressjs.com/en/guide/database-integration.html
