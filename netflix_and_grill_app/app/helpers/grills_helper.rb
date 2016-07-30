@@ -1,0 +1,2 @@
+module GrillsHelper
+end

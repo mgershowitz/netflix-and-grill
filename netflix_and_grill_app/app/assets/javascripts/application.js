@@ -13,3 +13,27 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+const renderGrill = ( grill ) => {
+  let $container = $( '#grills' );
+  let $grill = $( '<h3 class="grill">' ).text( grill.sourceDisplayName )
+  let $img = $( '<img>' ).attr( 'src', grill.imageUrlsBySize[90] )
+  // render the image
+  $grill.append( $('<li>').append($img) );
+  $container.append( $grill );
+}
+
+const getGrills = () => {
+  $.getJSON('/grills').done(( grills ) => {
+    console.log(grills)
+    grills.matches.forEach(( grill ) => {
+      renderGrill( grill );
+    })
+  })
+}
+
+
+
+$(function() {
+  getGrills();
+})
