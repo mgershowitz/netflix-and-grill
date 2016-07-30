@@ -20,8 +20,8 @@ This will be an API where the user can save their shows and BBQ recipes
 
 
 ## Wireframes
-![](http://imgur.com/a/Zbjzx)
-![](http://imgur.com/a/Psqus)
+![](http://i.imgur.com/AddKPM0.png)
+![](http://i.imgur.com/FGsRaML.png)
 
 ## User story
 
