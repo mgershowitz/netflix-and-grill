@@ -15,15 +15,17 @@
 //= require_tree .
 
 const renderGrill = ( grill ) => {
-  let $container = $( '#grills' );
-  let $grill = $( '<h3 class="grill">' ).text( grill.sourceDisplayName )
+  let $container = $( '#grill' );
+  let $grill = $( '<h3>' ).text( grill.sourceDisplayName )
   let $img = $( '<img>' ).attr( 'src', grill.imageUrlsBySize[90] )
   // render the image
   $grill.append( $('<li>').append($img) );
   $container.append( $grill );
 }
 
-const getGrills = () => {
+const getGrills = (e) => {
+  e.preventDefault()
+  console.log(e.target.elements.value)
   $.getJSON('/grills').done(( grills ) => {
     console.log(grills)
     grills.matches.forEach(( grill ) => {
@@ -32,8 +34,27 @@ const getGrills = () => {
   })
 }
 
+const renderShows = ( show ) => {
+  let $container = $( '#show-list' );
+  let $show = $( '<h3>' ).text( show.title )
+  let $img = $( '<img>' ).attr( 'src', show.artwork_208x117 )
+  // render the image
+  $show.append( $('<li>').append($img) );
+  $container.append( $show );
+}
 
+const getShows = (e) => {
+  e.preventDefault()
+  console.log(e.target.elements.value)
+  $.getJSON('/shows').done(( shows ) => {
+    console.log(shows)
+    shows.results.forEach(( show ) => {
+      renderShows( show );
+    })
+  })
+}
 
 $(function() {
-  getGrills();
+  $('#grillin').submit(getGrills);
+  $('#watchin').submit(getShows);
 })

@@ -27,9 +27,11 @@ li {
 }
 
 #shows {
-  width: 30%;
+  display: inline-block;
+  width: 40%;
 }
 
 #grills {
-  width: 30%;
+  display: inline-block;
+  width: 40%;
 }
