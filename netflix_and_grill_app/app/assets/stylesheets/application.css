@@ -14,7 +14,7 @@
  *= require_self
  */
 body {
-  background-color: #ef3525;
+  background-color: #b4131d;
   color: white;
   text-align: center;
   text-shadow: 3px 3px black;
@@ -26,12 +26,23 @@ li {
   display: block;
 }
 
-#shows {
-  display: inline-block;
-  width: 40%;
-}
+
 
 #grills {
   display: inline-block;
-  width: 40%;
+  position: relative;
+  /*margin-top: 15%;*/
+ /* width: 40%;*/
 }
+
+img {
+  width: 300px;
+  /*margin-left: 40%;*/
+  /*margin-right: 50%;*/
+}
+
+input[type = submit] {
+  background-color: white;
+}
+
+

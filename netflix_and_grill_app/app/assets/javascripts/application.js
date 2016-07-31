@@ -16,6 +16,7 @@
 
 const renderGrill = ( grill ) => {
   let $container = $( '#grill' );
+  $container.empty()
   let $grill = $( '<h3>' ).text( grill.sourceDisplayName )
   let $img = $( '<img>' ).attr( 'src', grill.imageUrlsBySize[90] )
   // render the image
@@ -25,31 +26,47 @@ const renderGrill = ( grill ) => {
 
 const getGrills = (e) => {
   e.preventDefault()
-  console.log(e.target.elements.value)
-  $.getJSON('/grills').done(( grills ) => {
+  let food = e.target.meats.value
+  $.getJSON('/grills', {food}).done(( grills ) => {
     console.log(grills)
-    grills.matches.forEach(( grill ) => {
+    let i = Math.floor(Math.random()*grills.matches.length)
+    let grill = grills.matches[i]
+    // grills.matches.forEach(( grill ) => {
       renderGrill( grill );
-    })
+    // })
   })
 }
 
 const renderShows = ( show ) => {
   let $container = $( '#show-list' );
-  let $show = $( '<h3>' ).text( show.title )
+  // $container.empty()
+  let $newRow = $('<div class="row">')
+  let $lastRow =$('.row').eq(-1)
+  let $show = $( '<div class="four columns">' )
   let $img = $( '<img>' ).attr( 'src', show.artwork_208x117 )
-  // render the image
-  $show.append( $('<li>').append($img) );
-  $container.append( $show );
+  let $save = $('<input type="submit" name="save" value="save">')
+  $show.append($img).append($save)
+  $lastRow.append( $show );
 }
 
+let counter = 0
 const getShows = (e) => {
   e.preventDefault()
-  console.log(e.target.elements.value)
-  $.getJSON('/shows').done(( shows ) => {
+
+  let choice = e.target.title.value
+  $( '#show-list' ).empty()
+  counter = 0;
+  $.getJSON('/shows', {choice}).done(( shows ) => {
     console.log(shows)
     shows.results.forEach(( show ) => {
+      let $container = $( '#show-list' );
+      let $newRow = $('<div class="row">')
+      if(counter % 3 === 0){
+        $container.append($newRow);
+      }
       renderShows( show );
+      counter++
+      // console.log(counter)
     })
   })
 }
