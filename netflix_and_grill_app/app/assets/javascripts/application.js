@@ -42,11 +42,13 @@ const renderShows = ( show ) => {
   // $container.empty()
   let $newRow = $('<div class="row">')
   let $lastRow =$('.row').eq(-1)
-  let $show = $( '<div class="four columns">' )
+  let $form = $(`<form data-url="/bbqueue/new">`);
+  let $show = $( '<div class="five columns">' )
   let $img = $( '<img>' ).attr( 'src', show.artwork_208x117 )
   let $save = $('<input type="submit" name="save" value="save">')
-  $show.append($img).append($save)
+  $show.append($form.append($img,$save))
   $lastRow.append( $show );
+  $form.submit(createBBQ)
 }
 
 let counter = 0
@@ -61,7 +63,7 @@ const getShows = (e) => {
     shows.results.forEach(( show ) => {
       let $container = $( '#show-list' );
       let $newRow = $('<div class="row">')
-      if(counter % 3 === 0){
+      if(counter % 2 === 0){
         $container.append($newRow);
       }
       renderShows( show );
@@ -71,7 +73,62 @@ const getShows = (e) => {
   })
 }
 
+const getBBQ = (e) => {
+  e.preventDefault()
+  $('#featured').text("You Netflix BBQueue")
+  $( '#show-list' ).empty()
+  counter = 0;
+  $.getJSON('/bbqueue').done(( shows ) => {
+    shows.forEach(( show ) => {
+      let $container = $( '#show-list' );
+      let $newRow = $('<div class="row">')
+      if(counter % 2 === 0){
+        $container.append($newRow);
+      }
+      let $lastRow =$('.row').eq(-1)
+      let $show = $( '<div class="five columns">' )
+      let $img = $( '<img>' ).attr( 'src', show.image ).attr('display','block')
+      // let $pair = $('<input type="submit" name="getGrill" value="Pair">')
+      let $delete = $(`<input type="submit" value="Delete" class="delete">`).attr('data-url',`/bbqueue/${show.id}`)
+      $show.append($img).append($delete)
+      $lastRow.append( $show );
+      $('.delete').click(deleteItem);
+      counter++
+    })
+  })
+}
+
+
+const createBBQ=(e)=>{
+  e.preventDefault();
+console.log('hi')
+  let $children = $(e.target).children();
+  $children.eq(1).val('Added to BBQueue')
+  let data =  {
+                title    : "dummy",
+                image    : $children.eq(0).attr('src'),
+                meat     : "dummy"
+              }
+  $.post('/bbqueue',data)
+  .done(function(){
+    console.log(arguments);
+    })
+}
+
+const deleteItem = (e) =>{
+  let url = $(e.target).attr('data-url');
+  $.ajax({
+    url: url,
+    method: 'delete'
+  }).done(function(){
+    console.log(arguments);
+    $(e.target).parent().remove();
+    // getBBQ(e)
+  })
+}
+
 $(function() {
   $('#grillin').submit(getGrills);
   $('#watchin').submit(getShows);
+  $('#bbq').submit(getBBQ);
 })

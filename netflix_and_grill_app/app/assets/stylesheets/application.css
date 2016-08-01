@@ -26,7 +26,10 @@ li {
   display: block;
 }
 
-
+#logo {
+  width:500px;
+  margin-bottom: 8%
+}
 
 #grills {
   display: inline-block;
