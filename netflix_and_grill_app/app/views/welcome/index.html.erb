@@ -1,23 +1,29 @@
-
-<img id="logo" src="http://i.imgur.com/pxVIrYe.png" alt="">
-<p>TV and steaks, everyone's favorites</p>
+<header>
+  <img id="logo" src="http://i.imgur.com/pxVIrYe.png" alt="">
+  <div id="tag">
+    <p>TV and steaks, everyone's favorites</p>
+  </div>
 <form action="get" id='bbq'>
   <input type="submit" value="Your Netflix BBQueue" name='bbq'>
 </form>
+  <form action="get" id="watchin">
+        <input type="hidden" placeholder="Title" name="title" value="" id="searchBar">
+  </form>
+        <form action="" id="search">
+        <input type="submit" name="Search" value="Search">
+        </form>
+</header>
 
   <div id="grill-container">
-    <div class="eight columns" id="shows">
-      <h2 id='featured'>Featured Programing</h2>
-      <form action="get" id="watchin">
-        <input type="text" placeholder="Title" name="title" value="">
-        <input type="submit" name="Seach">
-      </form>
+    <div class="twelve columns" id="shows">
+      <h2 id='featured'>Search shows by title or display your Netflix BBQueue</h2>
+
       <div  id="show-list">
         <!--  shows will be rendered -->
       </div>
     </div>
   </div>
-    <div class="four colums" id="grills">
+   <!--  <div class="four colums" id="grills">
       <h2>From the Grill</h2>
       <form action="get" id='grillin'>
         <select name="meats">
@@ -31,6 +37,6 @@
       <div id="grill">
 
      </div>
-    </div>
+    </div> -->
 
 

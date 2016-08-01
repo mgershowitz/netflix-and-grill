@@ -13,11 +13,21 @@
  *= require_tree .
  *= require_self
  */
-body {
+header {
+  height: 12vh;
+  margin-top: -2%;
+  width: 107%;
   background-color: #b4131d;
+  box-shadow: 3px 3px 3px #2e2e2e;
+  position:fixed;
+  /*opacity: .75;*/
+}
+
+body {
   color: white;
-  text-align: center;
-  text-shadow: 3px 3px black;
+  background-color: #141414;
+ /* text-align: center;*/
+  /*text-shadow: 3px 3px black;*/
   font-family: helvetica;
   display: inline;
 }
@@ -27,10 +37,17 @@ li {
 }
 
 #logo {
-  width:500px;
-  margin-bottom: 5%
+  height:8vh;
+  margin-top: 1%;
+  margin-left: 3%;
+  display:inline-block;
+  opacity: 1;
 }
-
+#tag {
+  display: inline-block;
+  margin-left: 3%;
+  margin-top: -3%
+}
 #grills {
   display: inline-block;
   position: relative;
@@ -40,12 +57,26 @@ li {
 
 img {
   width: 300px;
+  height: 168.75px;
   /*margin-left: 40%;*/
   /*margin-right: 50%;*/
 }
 
 input[type = submit] {
-  background-color: white;
+  color: white;
 }
 
+#watchin, #bbq, #search {
+  display: inline-block;
+  float:right;
+  margin-right: 110px;
+  margin-top: 30px;
+}
+ #watchin, #search {
+  margin-right: 30px;
+  }
 
+  #featured {
+    margin-top: 12vh;
+    margin-left: 2%;
+  }
