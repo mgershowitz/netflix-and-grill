@@ -32,3 +32,4 @@ This will be an API where the user can save their shows and BBQ recipes
 - As a user I want to be able to be able to search grilling recipes based on main ingredient
 
 ## Citation
+http://stackoverflow.com/questions/1634750/ruby-function-to-remove-all-white-spaces
