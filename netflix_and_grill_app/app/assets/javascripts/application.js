@@ -28,7 +28,7 @@ const getGrills = () => {
   // e.preventDefault()
   let food = "steak"
   // let food = e.target.meats.value
-  $.getJSON('/grills', {food}).done(( grills ) => {
+  $.getJSON('/grills').done(( grills ) => {
     console.log(grills)
     let i = Math.floor(Math.random()*grills.matches.length)
     meat = grills.matches[i].imageUrlsBySize[90]
@@ -118,18 +118,18 @@ const getBBQ = (e) => {
         // let meat = ''
         getGrills()
         let url = $(this).attr('data-url')
-        let data = {meat:meat};
         setTimeout(function(){
+        let data = {meat:meat};
         console.log(data)
           $.ajax({
             url: url,
             method: 'put',
             data: data
           })
-        }, 1300)
+        }, 800)
         setTimeout(function(){
           getBBQ(e)
-        },1500)
+        },900)
         // console.log('off')
       })
 })
