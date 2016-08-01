@@ -75,7 +75,7 @@ const getShows = (e) => {
 
 const getBBQ = (e) => {
   e.preventDefault()
-  $('#featured').text("You Netflix BBQueue")
+  $('#featured').text("Your Netflix BBQueue")
   $( '#show-list' ).empty()
   counter = 0;
   $.getJSON('/bbqueue').done(( shows ) => {
@@ -89,7 +89,7 @@ const getBBQ = (e) => {
       let $show = $( '<div class="five columns">' )
       let $img = $( '<img>' ).attr( 'src', show.image ).attr('display','block')
       // let $pair = $('<input type="submit" name="getGrill" value="Pair">')
-      let $delete = $(`<input type="submit" value="Delete" class="delete">`).attr('data-url',`/bbqueue/${show.id}`)
+      let $delete = $(`<input type="submit" value="Binge Complete" class="delete">`).attr('data-url',`/bbqueue/${show.id}`)
       $show.append($img).append($delete)
       $lastRow.append( $show );
       $('.delete').click(deleteItem);
