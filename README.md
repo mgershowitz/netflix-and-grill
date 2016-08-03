@@ -1,35 +1,24 @@
-# Netflix and Grill
+# README
 
-![](http://chipchickcom.wpengine.netdna-cdn.com/wp-content/uploads/2016/04/p7521_column_grid_12-508x508.jpg)
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-## Description
-Netlix and Grill allows you to choose a television show to watch based on genre and then allows you to pick a grilling recipe to compliment your show.
+Things you may want to cover:
 
-## APIs
-Three api's will be used for Netflix and Grill
+* Ruby version
 
-### Guidebox
-https://api.guidebox.com/.
-This API will bring back an array of television shows based on genre, or the users title input
+* System dependencies
 
-### Yummly
-This API will bring back a BBQ recipe based on the key ingredient chosen by the user
+* Configuration
 
-### Internal API of user choice
-This will be an API where the user can save their shows and BBQ recipes
+* Database creation
 
+* Database initialization
 
-## Wireframes
-![](http://i.imgur.com/AddKPM0.png)
-![](http://i.imgur.com/FGsRaML.png)
+* How to run the test suite
 
-## User story
+* Services (job queues, cache servers, search engines, etc.)
 
-- As a user I want to be able to search television shows by title
-- As a user I want to be able to be given suggestions of shows based on genre
-- As a user I want to be able to be able to save y favorite shows
-- As a user I want to be able to make comments about my favorite shows
-- As a user I want to be able to be able to search grilling recipes based on main ingredient
+* Deployment instructions
 
-## Citation
-http://stackoverflow.com/questions/1634750/ruby-function-to-remove-all-white-spaces
+* ...

@@ -1,0 +1,2 @@
+class Bbqueue < ApplicationRecord
+end

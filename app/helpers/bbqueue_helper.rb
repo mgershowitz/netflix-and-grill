@@ -1,0 +1,2 @@
+module BbqueueHelper
+end
