@@ -6,11 +6,17 @@ gem "awesome_print"
 
 gem 'faker'
 
-gem 'rails_12factor', group: :production
+group :production do
+ gem 'pg', '~> 0.18'
+ gem 'rails_12factor'
+end
+
+
+# gem 'rails_12factor', group: :production
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 0.18', group: :production
+# gem 'pg', '~> 0.18', group: :production
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
