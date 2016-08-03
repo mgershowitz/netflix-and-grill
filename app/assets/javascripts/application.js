@@ -176,7 +176,8 @@ const showSearch = (e) =>{
 }
 
 
-$('turbolinks:load',() => {
+// $('turbolinks:load',() => {
+$(document).on('turbolinks:load', function(){
   $('#grillin').submit(getGrills);
   $('#watchin').submit(getShows);
   $('#bbq').submit(getBBQ);
